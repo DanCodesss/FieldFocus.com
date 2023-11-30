@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Comment Section</title>
+    <style>
+        #comments-container {
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .comment {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .comment p {
+            margin: 0;
+        }
+
+        #name-input,
+        #comment-input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        #submit-btn {
+            padding: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="comments-container">
+    <h2>Comments</h2>
+    <div id="comments-list"></div>
+    <input type="text" id="name-input" placeholder="Your Name">
+    <textarea id="comment-input" placeholder="Add your comment..."></textarea>
+    <button id="submit-btn" onclick="addComment()">Submit</button>
+</div>
+
+<script>
+    // Load comments from JSON storage
+    document.addEventListener('DOMContentLoaded', function () {
+        loadComments();
+    });
+
+    function addComment() {
+        const nameInput = document.getElementById('name-input');
+        const commentInput = document.getElementById('comment-input');
+        const name = nameInput.value.trim();
+        const commentText = commentInput.value.trim();
+
+        if (name !== '' && commentText !== '') {
+            const commentList = document.getElementById('comments-list');
+
+            // Create a new comment object
+            const newComment = {
+                name: name,
+                comment: commentText
+            };
+
+            // Get existing comments from storage
+            let existingComments = getCommentsFromStorage();
+
+            // Add the new comment
+            existingComments.push(newComment);
+
+            // Save updated comments to storage
+            saveCommentsToStorage(existingComments);
+
+            // Display the new comment
+            displayComment(newComment);
+
+            // Clear the input fields after submitting a comment
+            nameInput.value = '';
+            commentInput.value = '';
+        }
+    }
+
+    function displayComment(comment) {
+        const commentList = document.getElementById('comments-list');
+
+        const commentDiv = document.createElement('div');
+        commentDiv.className = 'comment';
+        commentDiv.innerHTML = `<p><strong>${comment.name}</strong>: ${comment.comment}</p>`;
+        commentList.appendChild(commentDiv);
+    }
+
+    function loadComments() {
+        const existingComments = getCommentsFromStorage();
+
+        // Display existing comments
+        existingComments.forEach(comment => {
+            displayComment(comment);
+        });
+    }
+
+    function getCommentsFromStorage() {
+        // Retrieve comments from storage or return an empty array if none exist
+        return JSON.parse(localStorage.getItem('comments')) || [];
+    }
+
+    function saveCommentsToStorage(comments) {
+        // Save comments to storage
+        localStorage.setItem('comments', JSON.stringify(comments));
+    }
+</script>
+
+</body>
+</html>
