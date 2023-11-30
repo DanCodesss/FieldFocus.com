@@ -481,15 +481,15 @@ $(document).ready(function(){
 });
 
 function setObject(key, value) {
-  window.localStorage1.setItem(key, JSON.stringify(value));
+  window.localStorage.setItem(key, JSON.stringify(value));
 }
 function getObject(key) {
-  var storage = window.localStorage1,
+  var storage = window.localStorage,
       value = storage.getItem(key);
   return value && JSON.parse(value);
 }
 function clearStorage() {
-  window.localStorage1.clear();
+  window.localStorage.clear();
 }
 
 function saveComment(){
