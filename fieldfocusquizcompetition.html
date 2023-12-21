@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FieldFocus Quiz Competition!</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #b9b3a9;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 450px;
+  padding: 20px;
+  margin-top: 80px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.options {
+  margin-bottom: 20px;
+}
+
+.option {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+}
+
+.button:hover {
+  background-color: #3071a9;
+}
+
+.result {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.hide{
+  display: none;
+}
+    </style>
+</head>
+<body>
+  <section id="header" class="cd-secondary-nav">
+    <div class="container-fluid">
+    <div class="row">
+       <div class="col-md-12">
+          <nav class="navbar navbar-default" role="navigation">
+             <!-- Brand and toggle get grouped for better mobile display -->
+             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><span>Field</span>Focus <img class='fav'src="img/best-favicon.png"></a>
+             </div>
+             <!-- Collect the nav links, forms, and other content for toggling -->
+             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav nav_1">
+                   <li><a class="pad_1" href="index.html">Home</a></li>
+                   <li><a class="pad_1 active_1" href="index.html">Details</a></li>
+           <li><a class="pad_1" href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right nav_2">
+           
+                      <li class="dropdown dropdown-large">
+         <a href="detail.html" class="dropdown-toggle pad_1" data-toggle="dropdown">Trending NOW<b class="caret"></b></a>
+         
+         <ul class="dropdown-menu dropdown-menu-large row menu_1">
+               <li class="dropdown-header">FAMOUS LAUNCH</li>
+           <li class="col-sm-6">
+             <ul>
+               
+               <li><a class="selected" href="detail.html">Manchester United</a></li>
+               <li><a href="detail.html">Liverpool</a></li>
+               <li><a  href="detail.html">Manchester City</a></li>
+               <li><a href="detail.html">Chelsea</a></li>
+               <li><a href="detail.html">Saudi Pro League</a></li>
+             </ul>
+           </li>
+           <li class="col-sm-6">
+             <ul>
+               <li><a href="detail.html">Real Madrid</a></li>
+               <li><a href="detail.html">Bellingham</a></li>
+               <li><a href="detail.html">Lewandowski</a></li>
+               <li><a href="detail.html">Sevilla</a></li>
+               <li><a href="detail.html">Girona</a></li>
+             </ul>
+           </li>
+           
+         </ul>
+         
+       </li>
+                <li class="dropdown dropdown-large">
+         <a href="detail.html" class="dropdown-toggle pad_1" data-toggle="dropdown"><i class="fa fa-list"></i><b class="caret"></b></a>
+         
+         <ul class="dropdown-menu dropdown-menu-large row menu_2">
+            
+           <li class="col-sm-12 space_all">
+             <ul>
+               <li class="border_bottom_1 li_1"><a href="https://www.premierleague.com/"><img class='links'src="img/premierleague.png"><span class="span_1">Premier League</span><i class="fa fa-link"></i></a></li>
+               <li class="border_bottom_1 li_1"><a href="https://www.laliga.com/en-GB"><img class='links'src="img/laliga.png"><span class="span_1">Laliga</span><i class="fa fa-link"></i></a></li>
+               <li class="menu_1_inner border_bottom_1">
+               <p><a class="border_right_1" href="detail.html">Feedback</a>
+               <a class="border_right_1" href="detail.html">Sitemap</a>
+               <a class="border_right_1" href="detail.html">About us</a>
+               <a class="border_right_1" href="detail.html">Contact us</a>
+               </p>
+               <p>
+               <a class="border_right_1" href="detail.html">Careers</a>
+               <a  href="detail.html"> About Our Policy</a>
+               </p>
+               </li>
+               <li class="menu_1_inner_1">
+               <p>© 2023 Daniel Develops. <a href="detail.html">Terms and Condition</a>,<br> <a href="detail.html">Our Policy</a>, <a href="detail.html">Our  Privacy Policy</a>, <a href="detail.html">Latest Online  Policy</a> and<br> <a href="detail.html">Popular Ads</a> are available to you. All rights reserved.</p>
+               </li>
+             </ul>
+           </li>
+           
+           
+         </ul>
+         
+       </li>
+                <li class="dropdown"><a class="text_1 pad_1" href="detail.html" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span></a>
+                     <ul class="dropdown-menu drop_inner" style="min-width: 300px;">
+                         <li>
+                             <div class="row_1">
+                                 <div class="col-md-12">
+                                     <form class="navbar-form navbar-left" role="search">
+                                     <div class="input-group">
+                                         <input type="text" class="form-control" placeholder="Search">
+                                         <span class="input-group-btn">
+                                             <button class="btn btn-primary" type="button">
+                                                 Go!</button>
+                                         </span>
+                                     </div>
+                                     </form>
+                                 </div>
+                             </div>
+                         </li>
+                     </ul>
+                 </li>
+                </ul>
+             </div>
+             <!-- /.navbar-collapse -->
+          </nav>
+       </div>
+    </div>
+ </div>
+ </section>
+ 
+    <div class="container">
+        <h1>FIELDFOCUS QUIZ COMPETITION</h1>
+        <div id="quiz"></div>
+        <div id="result" class="result"></div>
+        <div id="timer" class="timer"></div>
+        <button id="submit" class="button">Submit</button>
+        <button id="retry" class="button hide">Retry</button>
+        <button id="showAnswer" class="button hide">Show The Incorrect Answers.</button>
+      </div>
+
+<script >
+   const quizData = [
+  {
+    question: 'Which stadium is known as "The Theatre of Dreams"?',
+    options: ['Wembley Stadium', 'Old Trafford', 'Camp Nou', 'Santiago Bernabéu'],
+    answer: 'Old Trafford',
+  },
+  {
+    question: 'Which player has scored the most goals in a single FIFA World Cup tournament?',
+    options: ['Cristiano Ronaldo', 'Sándor Kocsis', 'Just Fontaine', ' Eusébio'],
+    answer: 'Just Fontaine',
+  },
+  {
+    question: 'Which country won the FIFA World Cup in 2018?',
+    options: ['Brazil', 'Germany', 'France', 'Argentina'],
+    answer: 'France',
+  },
+  {
+    question: 'Which club holds the record for the most consecutive promotions in English football, climbing from the fourth to the first division in just four seasons?',
+    options: ['Swansea City', 'Manchester City', 'Burnley', 'Crystal Palace'],
+    answer: 'Swansea City',
+  },
+  {
+    question: 'In what year did the UEFA Cup change its name to the UEFA Europa League?',
+    options: [
+      '1997',
+      '2001',
+      '1992',
+      '2009',
+    ],
+    answer: '2009',
+  },
+  {
+    question: 'Who is the only goalkeeper to have won the Ballon dOr?',
+    options: ['Manuel Neuer', 'Lev Yashin', 'Gianluigi Buffon', 'Dino Zoff'],
+    answer: 'Lev Yashin',
+  },
+  {
+    question: 'Which club did Thierry Henry play for before joining Arsenal?',
+    options: [
+      'AS Monaco',
+      'Juventus',
+      'Barcelona',
+      'None',
+    ],
+    answer: 'Juventus',
+  },
+  {
+    question: 'Which club has won the most FA Cup titles?',
+    options: ['Arsenal', 'Manchester City.', 'Manchester United', 'Liverpool'],
+    answer: 'Arsenal',
+  },
+  {
+    question: 'Which team is nicknamed "The Baggies"?',
+    options: [
+      'Barcelona',
+      'West Bromwich Albion',
+      'Napoli',
+      'Paris Saint German',
+    ],
+    answer: 'West Bromwich Albion',
+  },
+  {
+    question: 'Who is the Greatest Football Player Of All Time?',
+    options: ['Lionel Messi', 'Cristiano Ronaldo', 'Omoare Daniel', 'Not decided yet.'],
+    answer: 'Omoare Daniel',
+  },
+];
+
+const quizContainer = document.getElementById('quiz');
+const resultContainer = document.getElementById('result');
+const submitButton = document.getElementById('submit');
+const retryButton = document.getElementById('retry');
+const showAnswerButton = document.getElementById('showAnswer');
+
+let currentQuestion = 0;
+let score = 0;
+let incorrectAnswers = [];
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+const timerElement = document.getElementById('timer');
+        let timer;
+        let minutes = 0;
+        let seconds = 0;
+
+        function startTimer() {
+            timer = setInterval(() => {
+                seconds++;
+                if (seconds === 60) {
+                    seconds = 0;
+                    minutes++;
+                }
+                updateTimer();
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+
+        function updateTimer() {
+            timerElement.innerHTML = `Time: ${minutes} min ${seconds} sec`;
+        }
+
+function displayQuestion() {
+            const questionData = quizData[currentQuestion];
+    
+            const questionElement = document.createElement('div');
+            questionElement.className = 'question';
+            questionElement.innerHTML = `<p>Question ${currentQuestion + 1}: ${questionData.question}</p>`;
+    
+            const optionsElement = document.createElement('div');
+            optionsElement.className = 'options';
+    
+            const shuffledOptions = [...questionData.options];
+            shuffleArray(shuffledOptions);
+    
+            for (let i = 0; i < shuffledOptions.length; i++) {
+                const option = document.createElement('label');
+                option.className = 'option';
+    
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = 'quiz';
+                radio.value = shuffledOptions[i];
+    
+                const optionText = document.createTextNode(shuffledOptions[i]);
+    
+                option.appendChild(radio);
+                option.appendChild(optionText);
+                optionsElement.appendChild(option);
+            }
+    
+            quizContainer.innerHTML = '';
+            quizContainer.appendChild(questionElement);
+            quizContainer.appendChild(optionsElement);
+            startTimer();
+            updateTimer();
+        }
+
+function checkAnswer() {
+    stopTimer();
+  const selectedOption = document.querySelector('input[name="quiz"]:checked');
+  if (selectedOption) {
+    const answer = selectedOption.value;
+    if (answer === quizData[currentQuestion].answer) {
+      score++;
+    } else {
+      incorrectAnswers.push({
+        question: quizData[currentQuestion].question,
+        incorrectAnswer: answer,
+        correctAnswer: quizData[currentQuestion].answer,
+      });
+    }
+    currentQuestion++;
+    selectedOption.checked = false;
+    if (currentQuestion < quizData.length) {
+      displayQuestion();
+    } else {
+      displayResult();
+    }
+  }
+
+}
+
+function displayResult() {
+  quizContainer.style.display = 'none';
+  submitButton.style.display = 'none';
+  retryButton.style.display = 'inline-block';
+  showAnswerButton.style.display = 'inline-block';
+  resultContainer.innerHTML = `You scored ${score} out of ${quizData.length}!`;
+  stopTimer();
+}
+
+function retryQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  incorrectAnswers = [];
+  quizContainer.style.display = 'block';
+  submitButton.style.display = 'inline-block';
+  retryButton.style.display = 'none';
+  showAnswerButton.style.display = 'none';
+  resultContainer.innerHTML = '';
+  displayQuestion();
+  minutes = 0;
+  seconds = 0;
+   updateTimer();
+}
+
+function showAnswer() {
+  quizContainer.style.display = 'none';
+  submitButton.style.display = 'none';
+  retryButton.style.display = 'inline-block';
+  showAnswerButton.style.display = 'none';
+
+  let incorrectAnswersHtml = '';
+  for (let i = 0; i < incorrectAnswers.length; i++) {
+    incorrectAnswersHtml += `
+      <p>
+        <strong>Question:</strong> ${incorrectAnswers[i].question}<br>
+        <strong>Your Answer:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
+        <strong>Correct Answer:</strong> ${incorrectAnswers[i].correctAnswer}
+      </p>
+    `;
+  }
+
+  resultContainer.innerHTML = `
+    <p>You scored ${score} out of ${quizData.length}!</p>
+    <p>Incorrect Answers:</p>
+    ${incorrectAnswersHtml}
+  `;
+  stopTimer();
+}
+
+submitButton.addEventListener('click', checkAnswer);
+retryButton.addEventListener('click', retryQuiz);
+showAnswerButton.addEventListener('click', showAnswer);
+
+displayQuestion();
+
+var secondaryNav = $('.cd-secondary-nav'),
+	   secondaryNavTopPosition = secondaryNav.offset().top;
+		$(window).on('scroll', function(){
+			if($(window).scrollTop() > secondaryNavTopPosition ) {
+				secondaryNav.addClass('is-fixed');	
+			} else {
+				secondaryNav.removeClass('is-fixed');
+			}
+		});	
+		
+
+
+
+</script>
+</body>
+</html>
