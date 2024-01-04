@@ -42,7 +42,6 @@
                </ul>
                <ul class="nav navbar-nav navbar-right nav_2">
 			   
-				<button id="dark-mode">Toggle Dark Mode</button>
                      
 				<li class="dropdown dropdown-large">
 						
@@ -532,32 +531,6 @@ $(document).ready(function(){
 		});	
 		
 });
-document.addEventListener('DOMContentLoaded', function () {
-    // Check the user's theme preference from local storage
-    const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
-
-    // Apply the theme on page load
-    toggleDarkMode(isDarkMode);
-
-    // Toggle the theme on button click
-    document.getElementById('themeToggle').addEventListener('click', function () {
-        isDarkMode ? enableLightMode() : enableDarkMode();
-    });
-});
-
-function enableDarkMode() {
-    document.documentElement.classList.add('dark-mode');
-    localStorage.setItem('darkMode', 'enabled');
-}
-
-function enableLightMode() {
-    document.documentElement.classList.remove('dark-mode');
-    localStorage.setItem('darkMode', null);
-}
-
-function toggleDarkMode(isDarkMode) {
-    isDarkMode ? enableDarkMode() : enableLightMode();
-}
 
 	</script>
 	
